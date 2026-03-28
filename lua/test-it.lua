@@ -149,8 +149,6 @@ M.setup = function(opts)
 		current_runner = opts.runner
 	end
 
-	print("Test-it loaded using: " .. current_runner)
-
 	vim.keymap.set("n", "<leader>ta", M.run_jest, { desc = "Run all tests" })
 	vim.keymap.set("n", "<leader>tf", M.run_current_file, { desc = "Run current file" })
 	vim.keymap.set("n", "<leader>td", M.run_describe_test, { desc = "Run nearest describe" })
