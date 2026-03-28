@@ -6,10 +6,10 @@ A lightweight, modern Neovim plugin written in Lua to run JavaScript and TypeScr
 
 ### ## Features
 
-* **Auto-Detection:** Automatically identifies if your project uses **Jest**, **Vitest**, or **Mocha** by scanning your `package.json`.
-* **Context-Aware Testing:** Uses Treesitter to find the nearest `describe`, `it`, or `test` block and runs only that specific suite.
-* **Asynchronous Execution:** Runs tests in the background using Neovim's `jobstart` API—no UI freezes.
-* **ANSI Color Support:** Full support for colored output (pass/fail/diffs).
+- **Auto-Detection:** Automatically identifies if your project uses **Jest**, **Vitest**, or **Mocha** by scanning your `package.json`.
+- **Context-Aware Testing:** Uses Treesitter to find the nearest `describe`, `it`, or `test` block and runs only that specific suite.
+- **Asynchronous Execution:** Runs tests in the background using Neovim's `jobstart` API—no UI freezes.
+- **ANSI Color Support:** Full support for colored output (pass/fail/diffs).
 
 ---
 
@@ -20,7 +20,7 @@ Using [lazy.nvim](https://github.com/folke/lazy.nvim):
 ```lua
 {
   "hxsggsz/test-it.nvim",
-  ft = { "javascript", "typescript", "javascriptreact", "typescriptreact" },
+   dependencies = { "nvim-treesitter/nvim-treesitter" },
   config = function()
     require("test-it").setup({
         -- runner = "jest" -- Optional: override auto-detection ("jest", "vitest", or "mocha")
@@ -35,22 +35,22 @@ Using [lazy.nvim](https://github.com/folke/lazy.nvim):
 
 The following keymaps are set up automatically when you call `.setup()`:
 
-| Keymap | Action |
-| :--- | :--- |
-| `<leader>ta` | Run all tests in the project |
-| `<leader>tf` | Run tests for the current file only |
-| `<leader>td` | Run the nearest `describe` block |
-| `<leader>ti` | Run the nearest `it` block |
-| `<leader>tt` | Run the nearest `test` block |
-| `q` | Close the test results window (when inside the test buffer) |
+| Keymap       | Action                                                      |
+| :----------- | :---------------------------------------------------------- |
+| `<leader>ta` | Run all tests in the project                                |
+| `<leader>tf` | Run tests for the current file only                         |
+| `<leader>td` | Run the nearest `describe` block                            |
+| `<leader>ti` | Run the nearest `it` block                                  |
+| `<leader>tt` | Run the nearest `test` block                                |
+| `q`          | Close the test results window (when inside the test buffer) |
 
 ---
 
 ### ## Requirements
 
-* **Neovim 0.9+**
-* **Treesitter** parsers for `javascript` or `typescript` (`:TSInstall javascript`)
-* A test runner installed in your project (accessible via `npx`)
+- **Neovim 0.9+**
+- **Treesitter** parsers for `javascript` or `typescript` (`:TSInstall javascript`)
+- A test runner installed in your project (accessible via `npx`)
 
 ---
 
